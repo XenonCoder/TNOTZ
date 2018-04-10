@@ -61,6 +61,33 @@ int main() {
     // set terminal size (height to 40, width to 90).
     cout << "\e[8;40;90t";
 
+    // Clear terminal
+    system("cls");
+
+    // Intro
+    cout << R"(
+        
+        @@@@@@@  @@@  @@@   @@@@@@   @@@@@@@  @@@@@@@@
+        @@@@@@@  @@@@ @@@  @@@@@@@@  @@@@@@@  @@@@@@@@
+          @@!    @@!@!@@@  @@!  @@@    @@!         @@!
+          !@!    !@!!@!@!  !@!  @!@    !@!        !@!
+          @!!    @!@ !!@!  @!@  !@!    @!!       @!!
+          !!!    !@!  !!!  !@!  !!!    !!!      !!!
+          !!:    !!:  !!!  !!:  !!!    !!:     !!:
+          :!:    :!:  !:!  :!:  !:!    :!:    :!:
+          ::     ::   ::   ::::: ::     ::    :: ::::
+          :      ::    :    : :  :      :     : :: : :
+        
+                  THE NIGHT OF THE ZOMBIES
+                            BY
+                   (C) 2018 STEFANO PERIS
+
+    )" << '\n'; // End intro
+
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "" << endl;
+
     cout << "Enter your name: ";
     char playerName[20];
     cin.getline(playerName, 20);
@@ -302,7 +329,6 @@ int main() {
             I use a string literal value, is the best solution to preserve the formatting of symbols and text in the terminal.
             */
 
-            
             cout << R"(
                          _______________
                         /               \
