@@ -286,7 +286,50 @@ int main() {
             cin.get();
             system("cls");
             cout << "You have died. Your journey ends here." << endl;
-            cout << "Press [Enter] to quit";
+            
+            /*
+            ASCII drawing of the death of the player.
+
+            Note: escape sequences are interpreted as single special characters or others, hence the strange output:
+            
+            "\\" means "\"
+            
+            for example.
+            
+            I use a string literal value, is the best solution to preserve the formatting of symbols and text in the terminal.
+            */
+
+            
+            cout << R"(
+                         _______________
+                        /               \
+                       /                 \
+                      /                   \
+                     |   XXXX       XXXX   |
+                     |   XXXX       XXXX   |
+                     |   XXX         XXX   |
+                     |          X          |
+                     \__       XXX       __/
+                        |\     XXX     /|
+                        | |           | |
+                        | I I I I I I I |
+                        |  I I I I I I  |
+                         \             /
+                          \_         _/
+                            \_______/
+                XXX                           XXX
+               XXXXX                         XXXXX
+               XXXXXXXXXX               XXXXXXXXXX
+                        XXXXX       XXXXX
+                             XXXXXXX
+                        XXXXX       XXXXX
+               XXXXXXXXXX               XXXXXXXXXX
+               XXXXX                         XXXXX
+                XXX                           XXX
+
+                )" << '\n'; // End of ASCII drawing   
+
+            cout << "Press [Enter] to quit" << endl;
             cin.sync();
             cin.get();
             return 0;
