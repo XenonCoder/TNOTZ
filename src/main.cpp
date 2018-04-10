@@ -58,74 +58,77 @@ signed int zombieHealth = 6;
 
 int main() {
 
-        cout << "Enter your name: ";
-        char playerName[20];
-        cin.getline(playerName, 20);
+    // set terminal size (height to 40, width to 90).
+    cout << "\e[8;40;90t";
 
-        string gender;
-        cout << "Enter your gender <m,f>: ";
+    cout << "Enter your name: ";
+    char playerName[20];
+    cin.getline(playerName, 20);
+
+    string gender;
+    cout << "Enter your gender <m,f>: ";
+    cin >> gender;
+    while (gender != "m"
+        and gender != "f"
+        and gender != "female"
+        and gender != "male") {
+        incorrect();
         cin >> gender;
-        while (gender != "m"
-            and gender != "f"
-            and gender != "female"
-            and gender != "male") {
-            incorrect();
-            cin >> gender;
-        }
+    }
 
-        if (gender == "male")
-            gender = "m";
-        else if (gender == "female")
-            gender = "f";
+    if (gender == "male")
+        gender = "m";
+    else if (gender == "female")
+        gender = "f";
 
-        cout << "Enter your age: ";
-        int playerAge;
-        cin >> playerAge;
-        if (playerAge < 18) {
-            cout << "Get out of here stalker";
-            cin.sync();
-            cin.get();
-            return 0;
-        } else if (playerAge >= 100) {
-            cout << "You're too old, you shouldn't be playing this.";
-            cin.sync();
-            cin.get();
-            return 0;
-        }
-
-        system("cls");
-
-        cout << "Your name is " << playerName << "(" << gender << ")" << ", you are " << playerAge << " years old." << endl;
-        cout << "Press [Enter] to continue" << endl;
+    cout << "Enter your age: ";
+    int playerAge;
+    cin >> playerAge;
+    if (playerAge < 18) {
+        cout << "Get out of here stalker";
         cin.sync();
         cin.get();
+        return 0;
+    } else if (playerAge >= 100) {
+        cout << "You're too old, you shouldn't be playing this.";
+        cin.sync();
+        cin.get();
+        return 0;
+    }
 
-        cout << "You're in your apartment, about to go to bed, when you hear a man screaming " << endl << "outside your window. ";
-        cout << "You look out your window finding what looks to be an old " << endl << "man being attack by 2 others. " << endl;
-        cout << endl;
+    system("cls");
 
-        string choice1;
-        cout << "Do you: " << endl << "[1]Go outside and help the man" << endl << "[2]Go to bed";
-        cout << endl << ":";
-        cin >> choice1;
-        while (choice1 != "1"
-            and choice1 != "2") {
+    cout << "Your name is " << playerName << "(" << gender << ")" << ", you are " << playerAge << " years old." << endl;
+    cout << "Press [Enter] to continue" << endl;
+    cin.sync();
+    cin.get();
+
+    cout << "You're in your apartment, about to go to bed, when you hear a man screaming " << endl << "outside your window. ";
+    cout << "You look out your window finding what looks to be an old " << endl << "man being attack by 2 others. " << endl;
+    cout << endl;
+
+    string choice1;
+    cout << "Do you: " << endl << "[1]Go outside and help the man" << endl << "[2]Go to bed";
+    cout << endl << ":";
+    cin >> choice1;
+    while (choice1 != "1"
+        and choice1 != "2") {
             incorrect();
             cin >> choice1;
-        }
+    }
 
-        if (choice1 == "1") {
-            cout << endl << "You should probably take something with you. On your computer desk you see " << endl;
-            cout << "a [F]lashlight, a [B]aseball bat, and a [H]unting knife." << endl;
-            cout << "Which one of these items do you want to take with you?" << endl << ":";
-            string slot1;
-            cin >> slot1;
-            while (slot1 != "F"
-                and slot1 != "f"
-                and slot1 != "B"
-                and slot1 != "b"
-                and slot1 != "H"
-                and slot1 != "h") {
+    if (choice1 == "1") {
+        cout << endl << "You should probably take something with you. On your computer desk you see " << endl;
+        cout << "a [F]lashlight, a [B]aseball bat, and a [H]unting knife." << endl;
+        cout << "Which one of these items do you want to take with you?" << endl << ":";
+        string slot1;
+        cin >> slot1;
+        while (slot1 != "F"
+            and slot1 != "f"
+            and slot1 != "B"
+            and slot1 != "b"
+            and slot1 != "H"
+            and slot1 != "h") {
                 incorrect();
                 cin >> slot1;
                 while (slot1 != "F"
@@ -327,7 +330,7 @@ int main() {
                XXXXX                         XXXXX
                 XXX                           XXX
 
-                )" << '\n'; // End of ASCII drawing   
+            )" << '\n'; // End of ASCII drawing
 
             cout << "Press [Enter] to quit" << endl;
             cin.sync();
