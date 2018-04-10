@@ -61,7 +61,7 @@ int main() {
     // set terminal size (height to 40, width to 90).
     cout << "\e[8;40;90t";
 
-    // Clear terminal
+    // Cleans the terminal screen
     system("cls");
 
     // Intro
